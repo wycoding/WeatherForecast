@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4e4bb"
+    android:background="#ccc2b7"
     tools:context="pers.wang.weatherforecast.MainActivity">
 
     <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
             android:gravity="center"
-            android:text="city"
-            android:textColor="#fff"
+            android:textColor="#3C5F81"
             android:textSize="36sp" />
 
         <ImageView
@@ -37,16 +36,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="max"
-                android:textColor="#fff"
+                android:textColor="#3C5F81"
                 android:textSize="48sp" />
 
             <TextView
+                android:id="@+id/tv_txt_center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="转"
-                android:textColor="#fff"
+                android:textColor="#3C5F81"
                 android:textSize="48sp" />
 
             <TextView
@@ -54,8 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="min"
-                android:textColor="#fff"
+                android:textColor="#3C5F81"
                 android:textSize="48sp" />
         </LinearLayout>
         <LinearLayout
@@ -64,31 +61,29 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tv_tmp_max"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text="max"
-                android:textColor="#fff"
-                android:textSize="48sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="/"
-                android:textColor="#fff"
-                android:textSize="48sp" />
-
-            <TextView
                 android:id="@+id/tv_tmp_min"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="right"
+                android:textColor="#3C5F81"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/tv_tmp_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#3C5F81"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/tv_tmp_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="left"
-                android:text="min"
-                android:textColor="#fff"
+                android:textColor="#3C5F81"
                 android:textSize="48sp" />
         </LinearLayout>
         <LinearLayout
@@ -97,19 +92,11 @@
             <TextView
                 android:gravity="center"
                 android:textSize="24sp"
-                android:textColor="#fff"
+                android:textColor="#3C5F81"
                 android:id="@+id/tv_update_loc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:text="更新" />
 
 </RelativeLayout>
