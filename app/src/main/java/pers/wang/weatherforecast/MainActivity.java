@@ -1,5 +1,6 @@
 package pers.wang.weatherforecast;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv_txt_n;
     private TextView tv_txt_center;
     private TextView tv_tmp_center;
+    private ImageButton btn_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,12 +99,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         queue.add(request);
+        btn_time = (ImageButton) findViewById(R.id.btn_time);
+        btn_time.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
+            case R.id.btn_time:
+                Intent i = new Intent();
+                i.setClass(MainActivity.this,TimeActivity.class);
+                startActivity(i);
+                break;
         }
     }
 
@@ -123,8 +132,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_txt_d.setText(heWeather5Bean.getDaily_forecast().get(0).getCond().getTxt_d());
         tv_txt_n.setText(heWeather5Bean.getDaily_forecast().get(0).getCond().getTxt_n());
         tv_update_loc.setText(heWeather5Bean.getBasic().getUpdate().getLoc());
-        tv_tmp_min.setText(heWeather5Bean.getDaily_forecast().get(0).getTmp().getMin()+"℃");
-        tv_tmp_max.setText(heWeather5Bean.getDaily_forecast().get(0).getTmp().getMax()+"℃");
+        tv_tmp_min.setText(heWeather5Bean.getDaily_forecast().get(0).getTmp().getMin() + "℃");
+        tv_tmp_max.setText(heWeather5Bean.getDaily_forecast().get(0).getTmp().getMax() + "℃");
         tv_txt_center.setText("转");
         tv_tmp_center.setText("~");
     }
